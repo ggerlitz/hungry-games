@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   post 'signin', to: 'sessions#create'
   delete 'signout', to: 'sessions#destroy'
 
-  resources :restaurants
+  resources :restaurants do
+  	resources :events, shallow: true
+  end
+
   resources :users
   root 'restaurants#index'
 end

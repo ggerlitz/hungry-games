@@ -13,8 +13,89 @@
  *= require_tree .
  *= require_self
  */
-nav { 
-	float: right;
-	margin-right: 2em;
+
+* {
+	box-sizing: border-box;
 }
 
+body {
+	background-color: #EBF7FF;
+	font-family: arial;
+}
+
+header {
+	padding: .5em;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-bottom: 1px solid #CCC;
+	background-color: white;
+}
+
+nav {
+	float: right;
+	margin-right: 1em;
+}
+
+main {
+	padding: 1em;
+	max-width: 750px;
+	margin: 0 auto;
+	margin-top: 57px;
+	background-color: white;
+	border-radius: 15px 15px;
+}
+
+a {
+	color: #588AFF;
+}
+
+.notice {
+	padding: 1em;
+	border: 1px solid green;
+	background-color: #E9FFBF;
+	border-radius: 12px 12px;
+}
+
+.alert {
+	padding: 1em;
+	border: 1px solid red;
+	background-color: #FFB6AE;
+	border-radius: 12px 12px;
+}
+
+.chirp {
+	border-bottom: 1px solid #EBF7FF;
+}
+
+img {
+	width: 100%;
+}
+
+input[type="text"], input[type="email"], input[type="password"], textarea {
+	padding: .75em;
+	width: 100%;
+	font-size: 1em;
+}
+
+textarea {
+	border: 1px solid #CCC;
+	margin-top: 0px; 
+}
+
+form label {
+	text-transform: uppercase;
+	font-size: .75em;
+	display: block;
+	margin-bottom: .5em;
+}
+
+.chirp h3 {
+	font-weight: normal;
+}
+
+nav a {
+	padding: 0 .5em;
+	display: inline-block;
+}

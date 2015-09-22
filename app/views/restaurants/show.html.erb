@@ -1,3 +1,11 @@
 <h1><%= @restaurant.name %></h1>
-<h3>Upcoming Events</h3>
-<%= render @restaurant.events %>
+
+<% if @restaurant.events.upcoming.any? %>
+	<h3>Upcoming Events</h3>
+	<%= render @restaurant.events.upcoming %>
+<% end %>
+
+<% if @restaurant.events.past.any? %>
+	<h3>Past Events</h3>
+	<%= render @restaurant.events.past %>
+<% end %>

@@ -2,7 +2,7 @@
 	<h3><%= link_to restaurant.name, restaurant %></h3>
 	<p><%= restaurant.address %></p>
 	<p><%= restaurant.phone %>
-		<% if restaurant.events.any? %>
+		<% if restaurant.events.upcoming.any? %>
 			| <%= pluralize(restaurant.events.size, "upcoming event") %>  
 		<% end %>
 		<% if current_user %> 

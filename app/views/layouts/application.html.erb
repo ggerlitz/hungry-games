@@ -8,7 +8,7 @@
 </head>
 <body>
 <header>
-	<span class="logo">HungryGames</span>
+	<span class="logo"><%= link_to 'HungryGames', root_path %></span>
 	<nav>
 		<% if current_user %>
 			<span>Hello <%= current_user.first_name %></span>

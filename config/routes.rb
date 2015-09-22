@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   delete 'signout', to: 'sessions#destroy'
 
   resources :restaurants do
-  	resources :events, shallow: true
+  	resources :events, shallow: true do
+  		member do
+  			post 'join'
+  		end
+  	end
   end
 
   resources :users

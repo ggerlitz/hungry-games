@@ -1,6 +1,13 @@
 <div class="restaurant">
-	<h3><%= restaurant.name %></h3>
+	<h3><%= link_to restaurant.name, restaurant %></h3>
 	<p><%= restaurant.address %></p>
-	<p><%= restaurant.phone %> | <%= link_to 'new event', new_restaurant_event_path(restaurant) %> </p>
+	<p><%= restaurant.phone %>
+		<% if restaurant.events.any? %>
+			| <%= pluralize(restaurant.events.size, "upcoming event") %>  
+		<% end %>
+		<% if current_user %> 
+		| <%= link_to 'new event', new_restaurant_event_path(restaurant) %> 
+		<% end %>
+	</p>
 </div>
 <hr>

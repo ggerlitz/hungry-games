@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
 	def current_user
 		session[:user_id] ? User.find(session[:user_id]) : nil
 	end
+
+	def authenticate_user!
+		unless current_user
+			redirect_to signin_path, notice: "You must log in to do that."
+		end
+	end
 end

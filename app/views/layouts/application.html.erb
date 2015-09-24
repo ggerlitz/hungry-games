@@ -24,7 +24,10 @@
 </header>
 <main>
 	<% if flash[:notice] %>
-		<div class="notice"><%= flash[:notice] %></div>
+		<div class="notice"><%= flash[:notice].html_safe %></div>
+	<% end %>
+	<% if roulettable_events and current_user %>
+		<%= link_to 'Roulette?', roulette_path, method: :post %>
 	<% end %>
 
 	<%= yield %>

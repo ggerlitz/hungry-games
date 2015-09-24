@@ -5,11 +5,14 @@ Rails.application.routes.draw do
   delete 'signout', to: 'sessions#destroy'
   get 'cuisine', to: 'restaurants#search'
   get 'cuisines/:cuisine', to: 'restaurants#cuisine', as: 'cuisine_name'
+  get 'events', to: 'events#list'
+  post 'roulette', to: 'events#roulette'
 
   resources :restaurants do
   	resources :events, shallow: true do
   		member do
   			post 'join'
+        delete 'leave'
   		end
   	end
   end

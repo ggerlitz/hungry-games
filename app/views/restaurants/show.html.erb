@@ -1,5 +1,5 @@
 <h1><%= @restaurant.name %></h1>
-
+<p><%= @restaurant.address %></p>
 <% if @restaurant.events.upcoming.any? %>
 	<h3>Upcoming Events</h3>
 	<%= render @restaurant.events.upcoming %>

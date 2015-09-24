@@ -1,7 +1,5 @@
 <p>
 	<%= link_to pluralize(event.users.size, 'foodee'), event %> <%= event.description %>
 
-	<% if current_user and event.users.exclude?(current_user) and event.upcoming? %>
-	| <%= link_to 'join', join_event_path(event), method: :post %>
-	<% end %>
+	<%= render 'join_event' %>
  </p>

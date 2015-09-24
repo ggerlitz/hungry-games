@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'events', to: 'events#list'
   post 'roulette', to: 'events#roulette'
 
+  resources :yelp, only: [:index]
   resources :restaurants do
   	resources :events, shallow: true do
   		member do

@@ -21,6 +21,15 @@ class RestaurantsController < ApplicationController
   def edit
   end
 
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+      redirect_to new_restaurant_event_path(@restaurant)
+    else
+      redirect_to :back, notice: "Something went wrong."
+    end
+  end
+
   def search
     cuisine = Restaurant.find_by(cuisine: params[:cuisine])
     redirect_to cuisine_name_path(cuisine.display_cuisine)
@@ -33,5 +42,11 @@ class RestaurantsController < ApplicationController
       marker.lng restaurant.longitude
     end
     render :index
+  end
+
+  private
+
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :yelp_id, :phone, :address)
   end
 end

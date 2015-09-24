@@ -1,3 +1,4 @@
+<%= image_tag @user.avatar.url(:medium) %>
 <h1><%= @user.full_name %></h1>
 <% if @user.bio.blank? %>
 	<p><%= @user.full_name %> is mysterious.</p>

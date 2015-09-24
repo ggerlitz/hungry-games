@@ -15,6 +15,7 @@
 		<% if current_user %>
 			<span>Hello <%= current_user.first_name %></span>
 			<%= link_to 'sign out', signout_path, method: :delete %>
+			<%= link_to 'edit profile', edit_user_path(current_user) %>
 		<% else %>
 			<%= link_to 'sign in', signin_path %>
 			<%= link_to 'sign up', new_user_path %>

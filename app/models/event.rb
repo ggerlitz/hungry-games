@@ -11,6 +11,10 @@ class Event < ActiveRecord::Base
   	users << user
   end
 
+  def upcoming?
+    start > Time.now ? true : false
+  end
+
   def description
   	if Time.now < start
   		message = "are hanging out on "

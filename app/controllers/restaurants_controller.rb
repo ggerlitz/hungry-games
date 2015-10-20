@@ -1,4 +1,4 @@
-class RestaurantsController < ApplicationController
+class RestaurantsController< ApplicationController
   def index
     if current_user
       @restaurants = Restaurant.near(current_user, 5)
